@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  background: #FAFAFA;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  font-size: 14px;
+  padding: 10px;
+  border: 2px solid black;
+  display: inline-block;
+  width: 800px;
+}
+
+#generate {
+  font-size: 120%;
+  padding: 10px;
+}
