@@ -49472,7 +49472,7 @@ function renderPhrase(phrase) {
   (0, _jquery2.default)(function () {
     (0, _jquery2.default)("#code").val(phrase);
     (0, _jquery2.default)("#address").val(address);
-    (0, _jquery2.default)("#payment_address").text(paymentAddress);
+    (0, _jquery2.default)("#payment_address").val(paymentAddress);
   });
 
   (0, _jquery2.default)("#qrcode").empty();

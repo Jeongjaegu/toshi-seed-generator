@@ -16,14 +16,14 @@ html(class='no-js', lang='en')
       button#generate Generate
       h3 TOKEN_APP_ID
       input(type='text', id='address')
+      h3 TOKEN_PAYMENT_ADDRESS
+      input(type='text', id='payment_address')
       h3 TOKEN_APP_SEED
       input(type='text', id='code')
       p You can also paste a seed here ^ to generate the App ID
       br
       h4 Additional info:
       ul
-        li
-          p The ethereum address where your app can receive funds is #[code(id='payment_address')]
         li
           p You can scan this QR code from the contacts screen of your Token app to add this app, once it has booted up and registered with the ID service.
           #qrcode

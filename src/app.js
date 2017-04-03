@@ -32,7 +32,7 @@ function renderPhrase(phrase) {
   $(() => {
     $("#code").val(phrase);
     $("#address").val(address);
-    $("#payment_address").text(paymentAddress);
+    $("#payment_address").val(paymentAddress);
   })
 
   $("#qrcode").empty();
