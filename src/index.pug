@@ -22,8 +22,8 @@ html(class='no-js', lang='en')
       input(type='text', id='code')
       p You can also paste a seed here ^ to generate the App ID
       br
-      h4 Additional info:
-      ul
-        li
-          p You can scan this QR code from the contacts screen of your Token app to add this app, once it has booted up and registered with the ID service.
-          #qrcode
+      h4 Optional: Generate a QR Code
+      p You can generate a QR code for your bot by inputting its TOKEN_APP_USERNAME below. This code can be scanned using the Token mobile client to add your bot as a contact.
+      h3 TOKEN_APP_USERNAME
+      input(type='text', id='username')
+      #qrcode

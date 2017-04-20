@@ -16,6 +16,10 @@ $(() => {
     console.log($("#code").val());
     renderPhrase($("#code").val());
   });
+
+  $("#username" ).on('input', function(e) {
+    renderCode($(this).val());
+  });
 })
 
 function generate() {
@@ -34,10 +38,12 @@ function renderPhrase(phrase) {
     $("#address").val(address);
     $("#payment_address").val(paymentAddress);
   })
+}
 
+function renderCode(username) {
   $("#qrcode").empty();
   new QRCode(document.getElementById("qrcode"), {
-      text: address,
+      text: 'https://app.tokenbrowser.com/add/@'+username,
       width: 300,
       height: 300,
       colorDark : "#000000",

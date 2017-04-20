@@ -33706,7 +33706,7 @@ exports = module.exports = __webpack_require__(395)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  -moz-box-sizing: border-box; }\n\nbody {\n  background: #FAFAFA;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  margin: 0; }\n\n.container {\n  width: 90%;\n  max-width: 900px;\n  margin-left: auto;\n  margin-right: auto; }\n\ninput {\n  font-size: 14px;\n  padding: 10px;\n  border: 2px solid black;\n  display: inline-block;\n  width: 800px; }\n\n#generate {\n  font-size: 120%;\n  padding: 10px; }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  -moz-box-sizing: border-box; }\n\nbody {\n  background: #FAFAFA;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  margin: 0; }\n\n.container {\n  width: 90%;\n  max-width: 900px;\n  margin-left: auto;\n  margin-right: auto; }\n\ninput {\n  font-size: 14px;\n  padding: 10px;\n  border: 2px solid black;\n  display: inline-block;\n  width: 800px; }\n\n#generate {\n  font-size: 120%;\n  padding: 10px; }\n\n#qrcode {\n  margin: 10px 0px; }\n", ""]);
 
 // exports
 
@@ -49456,6 +49456,10 @@ var utils = __webpack_require__(182);
     console.log((0, _jquery2.default)("#code").val());
     renderPhrase((0, _jquery2.default)("#code").val());
   });
+
+  (0, _jquery2.default)("#username").on('input', function (e) {
+    renderCode((0, _jquery2.default)(this).val());
+  });
 });
 
 function generate() {
@@ -49474,10 +49478,12 @@ function renderPhrase(phrase) {
     (0, _jquery2.default)("#address").val(address);
     (0, _jquery2.default)("#payment_address").val(paymentAddress);
   });
+}
 
+function renderCode(username) {
   (0, _jquery2.default)("#qrcode").empty();
   new QRCode(document.getElementById("qrcode"), {
-    text: address,
+    text: 'https://app.tokenbrowser.com/add/@' + username,
     width: 300,
     height: 300,
     colorDark: "#000000",
