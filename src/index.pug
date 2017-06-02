@@ -13,15 +13,33 @@ html(class='no-js', lang='en')
     .container
       h1 Token Seed Generator
       p See #[a(href="http://developers.tokenbrowser.com/docs/creating-a-token-app") Creating a Token App] for usage.
-      button#generate Generate
-      h3 TOKEN_APP_ID
-      input(type='text', id='address')
-      h3 TOKEN_APP_PAYMENT_ADDRESS
-      input(type='text', id='payment_address')
-      h3 TOKEN_APP_SEED
-      input(type='text', id='code')
-      p You can also paste a seed here ^ to generate the App ID
-      br
+      button#generate Regenerate
+
+      .section.new
+        p.lead For token-app-js v0.1.3+
+        h3 TOKEN_APP_SEED
+        input(type='text', id='code')
+        p You can also paste a seed here ^ to see your addresses
+        p
+          span.label Token App Id: 
+          span#address
+        p
+          span.label Token App Payment Address: 
+          span#payment_address
+
+
+      .section.old
+        p.lead For token-app-js <= v0.1.2
+        h3 TOKEN_APP_ID
+        input(type='text', id='old_address')
+        h3 TOKEN_APP_PAYMENT_ADDRESS
+        input(type='text', id='old_payment_address')
+        h3 TOKEN_APP_SEED
+        input(type='text', id='old_code')
+
+        p You can also paste a seed here ^ to see your addresses
+
+
       h4 Optional: Generate a QR Code
       p You can generate a QR code for your bot by inputting its TOKEN_APP_USERNAME below. This code can be scanned using the Token mobile client to add your bot as a contact.
       h3 TOKEN_APP_USERNAME

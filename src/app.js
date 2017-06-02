@@ -12,7 +12,7 @@ $(() => {
     generate();
   });
 
-  $("#code" ).on('input', function(e) {
+  $("#code").on('input', function(e) {
     console.log($("#code").val());
     renderPhrase($("#code").val());
   });
@@ -30,13 +30,19 @@ function generate() {
 function renderPhrase(phrase) {
   let seed = bip39.mnemonicToSeed(phrase);
   let key = hdkey.fromMasterSeed(seed);
+
   let address = utils.bufferToHex(key.derivePath("m/0'/1/0").getWallet().getAddress());
-  let paymentAddress = utils.bufferToHex(key.derivePath("m/0'/0/0").getWallet().getAddress());
+  let oldPaymentAddress = utils.bufferToHex(key.derivePath("m/0'/0/0").getWallet().getAddress());
+  let paymentAddress = utils.bufferToHex(key.derivePath("m/44'/60'/0'/0/0").getWallet().getAddress());
 
   $(() => {
     $("#code").val(phrase);
-    $("#address").val(address);
-    $("#payment_address").val(paymentAddress);
+    $("#address").text(address);
+    $("#payment_address").text(paymentAddress);
+
+    $("#old_code").val(phrase);
+    $("#old_address").val(address);
+    $("#old_payment_address").val(oldPaymentAddress);
   })
 }
 

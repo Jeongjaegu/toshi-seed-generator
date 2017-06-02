@@ -4,7 +4,7 @@ module.exports = {
      entry: './src/app.js',
      output: {
          path: './docs',
-         filename: 'app.bundle.js'
+         filename: 'app.bundle-[hash:6].js'
      },
     devServer: {
       contentBase: "./public",

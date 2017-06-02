@@ -33706,7 +33706,7 @@ exports = module.exports = __webpack_require__(395)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  -moz-box-sizing: border-box; }\n\nbody {\n  background: #FAFAFA;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  margin: 0; }\n\n.container {\n  width: 90%;\n  max-width: 900px;\n  margin-left: auto;\n  margin-right: auto; }\n\ninput {\n  font-size: 14px;\n  padding: 10px;\n  border: 2px solid black;\n  display: inline-block;\n  width: 800px; }\n\n#generate {\n  font-size: 120%;\n  padding: 10px; }\n\n#qrcode {\n  margin: 10px 0px; }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  -moz-box-sizing: border-box; }\n\nbody {\n  background: #FAFAFA;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  margin: 0; }\n\n.container {\n  width: 90%;\n  max-width: 900px;\n  margin-left: auto;\n  margin-right: auto; }\n\ninput {\n  font-size: 14px;\n  padding: 10px;\n  border: 2px solid black;\n  display: inline-block;\n  width: 800px; }\n\n#generate {\n  font-size: 120%;\n  padding: 10px; }\n\n#qrcode {\n  margin: 10px 0px; }\n\n.section {\n  margin: 20px 0;\n  padding: 10px; }\n  .section p.lead {\n    font-weight: bold; }\n\n.new {\n  background-color: #f4f8fa;\n  border-left: 4px solid #5bc0de; }\n\n.old {\n  background-color: #fcf8f2;\n  border-left: 4px solid #f0ad4e; }\n\n.label {\n  font-weight: bold; }\n", ""]);
 
 // exports
 
@@ -49470,13 +49470,19 @@ function generate() {
 function renderPhrase(phrase) {
   var seed = bip39.mnemonicToSeed(phrase);
   var key = hdkey.fromMasterSeed(seed);
+
   var address = utils.bufferToHex(key.derivePath("m/0'/1/0").getWallet().getAddress());
-  var paymentAddress = utils.bufferToHex(key.derivePath("m/0'/0/0").getWallet().getAddress());
+  var oldPaymentAddress = utils.bufferToHex(key.derivePath("m/0'/0/0").getWallet().getAddress());
+  var paymentAddress = utils.bufferToHex(key.derivePath("m/44'/60'/0'/0/0").getWallet().getAddress());
 
   (0, _jquery2.default)(function () {
     (0, _jquery2.default)("#code").val(phrase);
-    (0, _jquery2.default)("#address").val(address);
-    (0, _jquery2.default)("#payment_address").val(paymentAddress);
+    (0, _jquery2.default)("#address").text(address);
+    (0, _jquery2.default)("#payment_address").text(paymentAddress);
+
+    (0, _jquery2.default)("#old_code").val(phrase);
+    (0, _jquery2.default)("#old_address").val(address);
+    (0, _jquery2.default)("#old_payment_address").val(oldPaymentAddress);
   });
 }
 
