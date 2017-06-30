@@ -1,6 +1,6 @@
-# Token Seed Generator
+# Toshi Seed Generator
 
-Seed generator for use by bot developers. View it at: https://tokenbrowser.github.io/token-seed-generator/
+Seed generator for use by bot developers. View it at: https://www.toshi.org/toshi-seed-generator/
 
 To develop, install dependencies:
 ```bash
