@@ -49,7 +49,7 @@ function renderPhrase(phrase) {
 function renderCode(username) {
   $("#qrcode").empty();
   new QRCode(document.getElementById("qrcode"), {
-      text: 'https://app.tokenbrowser.com/add/@'+username,
+      text: 'https://app.toshi.org/add/@'+username,
       width: 300,
       height: 300,
       colorDark : "#000000",
